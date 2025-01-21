@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  @font-face {
+    font-family: "KyivTypeSansBoldThinMidline";
+    src: url("font/KyivTypeSansBoldThinMidline/font.woff2") format("woff2"), url("font/KyivTypeSansBoldThinMidline/font.woff") format("woff");
+  }
+  body {
+    @apply bg-backgroundPrimary font-sans overflow-x-hidden;
+  }
+  .AbsoluteNav {
+    @apply w-full flex justify-between items-center p-2 absolute z-50;
+  }
+
+  .clock {
+    @apply text-[#272727] text-[290px] font-serif motion-preset-pop max-[1024px]:text-9xl max-sm:text-7xl;
+  }
+  .intro {
+    @apply text-9xl text-white max-sm:text-5xl;
+  }
+  .ContactIcons {
+    @apply w-6 h-6;
+  }
+  .activeTab {
+    @apply relative max-sm:text-white md:w-12 md:h-6 motion-preset-focus;
+  }
+  li {
+    @apply flex items-center justify-center;
+  }
+  .activeTab::after {
+    @apply md:bg-[#5B5B5B] min-w-full min-h-full content-[""] absolute z-[-1] left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] box-content p-1 px-4 rounded-3xl;
+  }
+  .portfolio-items {
+    @apply grid w-full xl:grid-cols-10 xl:grid-rows-6 gap-2;
+    @apply max-[1024px]:flex max-[1024px]:w-fit max-[1024px]:h-full;
+  }
+  .roundBtn {
+    @apply bg-white text-black rounded-full p-1 px-2 flex items-center gap-x-1 w-28 h-8 hover:bg-black hover:text-white transition-all;
+  }
+  .contactInput {
+    @apply bg-transparent border-white border-b-[1px];
+  }
+  .contactInput:focus {
+    outline: none;
+  }
+  .QR {
+    @apply w-12;
+  }
+  .socialIcons {
+    @apply w-4 h-4;
+  }
+  .tips::before,
+  .tips::after {
+    @apply absolute content-[''] h-[1px] bg-white;
+  }
+  .tips::after {
+    @apply w-0 bottom-0 left-0 transition-all duration-500 ease-in h-[1.5px];
+  }
+  .tips::before {
+    @apply bottom-0 left-0 origin-left rotate-[125deg] w-16;
+  }
+  .tips::before,
+  .tips {
+    @apply opacity-0 group-hover:opacity-80 transition-all duration-700;
+  }
+  .circleBtn {
+    @apply w-12 h-12 rounded-full text-white bg-[#5d5d5d];
+  }
+  .noiseBg ::before {
+    @apply content-[""] w-full h-full absolute z-[-1] bg-noise opacity-35;
+  }
+  .blendBg {
+    @apply bg-blur;
+  }
+  .menu path {
+    @apply transition-all;
+  }
+  .glass {
+    @apply bg-[rgba(255,_255,_255,_0.08)] [box-shadow:0_4px_30px_rgba(0,_0,_0,_0.1)] backdrop-filter backdrop-blur-[3.6px] border-[1px] border-[solid] border-[rgba(255,255,255,0.3)];
+  }
+  .tabNav {
+    @apply fixed max-sm:translate-y-[-100%] md:glass max-sm:bg-black max-sm:h-full max-sm:flex max-sm:items-center max-sm:justify-end max-sm:w-full z-20 md:bottom-6 max-sm:bottom-0 p-2 px-5 md:rounded-3xl left-1/2 translate-x-[-50%] font-bold text-white font-[inter];
+    @apply transition-transform duration-500;
+  }
+  .tabNavOpen {
+    @apply fixed md:glass max-sm:bg-black max-sm:h-full max-sm:flex max-sm:items-center max-sm:justify-end max-sm:w-full z-20 md:bottom-6 max-sm:bottom-0 p-2 px-5 md:rounded-3xl left-1/2 translate-x-[-50%] font-bold text-white font-[inter];
+    @apply transition-transform duration-500;
+  }
+}
+.menuOpen path:nth-child(1) {
+  d: path("M5 33L33 5");
+}
+.menuOpen path:nth-child(2) {
+  d: path("M5 5L33 33");
+}
+.menuNOpen path:nth-child(1) {
+  d: path("M1 14L38 14");
+}
+.menuNOpen path:nth-child(2) {
+  d: path("M1 26L38 26");
+}
+
+.radial-gradient {
+  background: radial-gradient(circle, rgba(206, 69, 176, 1) 0%, rgba(206, 69, 176, 1) 50%, rgba(105, 19, 218, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.font-outline-2 {
+  -webkit-text-stroke: 1px white;
+}
+.customCursor {
+  cursor: url("./Components/Pointer.svg"), auto;
+}
+.noScrollbar::-webkit-scrollbar {
+  color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #5b5b5b;
+  border-radius: 200px;
+}
+div::-webkit-scrollbar {
+  display: none;
+}
+.scaleBg:hover {
+  background-blend-mode: darken;
+  -webkit-transform: scale(1.5, 1.5);
+  -webkit-transition: all 0.3s ease-in-out;
+}
+
+.flip-card {
+  background-color: transparent;
+
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the back side */
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+.element-2 {
+  background: linear-gradient(-45deg, rgba(0, 0, 0, 0.22), rgba(255, 255, 255, 0.25));
+}
