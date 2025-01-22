@@ -29,12 +29,21 @@ export default {
       animation: {
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
         'reverse-infinite-scroll': 'infinite-scroll 25s linear infinite reverse',
+        'leftAppear':'leftAppear linear ',
 
       },
       keyframes: {
         'infinite-scroll': {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(-100%)' },
+        },
+        'leftAppear':{
+          from:{
+            transform: 'translateX(-100%)',
+          },
+          to:{
+            transform: 'translateX(-25%)'
+          }
         },
       },
       "meSq":"url('/Image/me.png')",

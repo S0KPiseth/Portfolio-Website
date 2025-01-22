@@ -13,9 +13,9 @@ function Social() {
         <a href="https://www.linkedin.com/in/piseth-sok-21b65a289/" className="rounded-full hover:motion-preset-oscillate" target="blank">
           <FaLinkedinIn />
         </a>
-        <div target="blank" className="hover:motion-preset-oscillate">
+        <a href="mailto:piseth.sok.dev@gmail.com" target="blank" className="hover:motion-preset-oscillate">
           <MdEmail />
-        </div>
+        </a>
       </div>
     </IconContext.Provider>
   );

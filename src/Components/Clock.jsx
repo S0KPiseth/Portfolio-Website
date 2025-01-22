@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import TextTransition, { presets } from "react-text-transition";
+import Loader from "./Loader";
 
 const TEXTS = ["Brunei", "Cambodia", "Indonesia", "Laos", "Malaysia", "Myanmar", "Philippines", "Singapore", "Thailand", "Vietnam"];
 const randomIdx = Math.floor(Math.random() * 10);
@@ -47,12 +48,15 @@ function Clock({ fullLoad, setFullLoad }) {
   }, []);
 
   return (
-    <div className="intro font-bold absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-nowrap z-[-1]">
+    <div className="w-full overflow-hidden place-content-center place-items-center h-screen font-bold absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-nowrap z-[-1]">
       {showClock ? (
         <p className="clock">{time.toLocaleTimeString()}</p>
       ) : (
-        <div ref={textRef}>
-          <TextTransition springConfig={presets.wobbly}>{TEXTS[index % TEXTS.length]}</TextTransition>
+        <div className="w-full h-screen place-content-center place-items-center">
+          <div ref={textRef} className="absolute intro right-0 bottom-0 p-10 text-left">
+            <TextTransition springConfig={presets.wobbly}>{TEXTS[index % TEXTS.length]}</TextTransition>
+          </div>
+          <Loader />
         </div>
       )}
     </div>
