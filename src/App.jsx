@@ -47,7 +47,6 @@ function App() {
   useEffect(() => {
     const matchMedia = window.matchMedia("(max-width: 640px)");
     const match = () => {
-      console.log("hi");
       if (matchMedia.matches) {
         setIsMobile(true);
       } else if (!matchMedia.matches) {
@@ -175,8 +174,8 @@ function App() {
             {/* "absolute w-1/2 h-full scale-[1.1] bg-contain bg-top bg-[url('/Image/me.png')] bg-no-repeat left-1/2 top-10 z-[-1]" */}
             <div className="absolute flex w-1/2 max-sm:w-full h-full right-0 top-[-5%] overflow-hidden flex-col justify-start">
               <div className="group relative top-1/4 scale-[1.5] bg-cover w-full h-full bg-me3d bg-no-repeat hover:bg-[url('/Image/me2.png')] transition-all bg-blend-overlay max-sm:z-[-1] max-sm:bg-left">
-                <p className="inline-block max-[1024px]:rotate-180 max-[1024px]:top-[30%] max-[1024px]:left-[10%] xl:rotate-0 group-hover:after:w-[90px] absolute h-fit max-w-[250px] text-[10px] text-white right-[30%] top-16 tips">
-                  <span className="inline-block text-wrap w-[90px] max-[1024px]:rotate-[-180deg]">Thank you visiting!</span>
+                <p className="max-[1024px]:opacity-0 max-[1024px]:after:opacity-0 max-[1024px]:before:w-0 inline-block max-[1024px]:rotate-180 max-[1024px]:top-[30%] max-[1024px]:left-[10%] max-[1024px]:transition-none xl:rotate-0 group-hover:after:w-1/2 absolute h-fit max-w-[250px] text-[10px] text-white right-[20%] top-16 tips">
+                  <span className="max-[1024px]:opacity-0 inline-block text-wrap w-[150px] max-[1024px]:rotate-[-180deg]">Thank you for visiting!</span>
                 </p>
               </div>
               <div className="blendBg w-full h-40 absolute bottom-0 max-sm:z-[-1]"></div>
@@ -226,7 +225,7 @@ function App() {
           </section>
           <div className="w-full h-screen flex items-center justify-center">
             <div className="relative w-2/4 h-3/5 rounded-3xl max-sm:rounded-xl bg-backgroundPrimary flip-card max-[1024px]:w-4/5 max-[1024px]:h-2/6 max-sm:w-11/12 max-sm:h-[30%]">
-              <div className="flip-card-inner shadow-neumorphism rounded-3xl max-sm:rounded-xl element-2">
+              <motion.div initial={isMobile && { rotateY: "0deg" }} whileInView={isMobile && { rotateY: "180deg" }} transition={{ delay: 0.5 }} className="flip-card-inner shadow-neumorphism rounded-3xl max-sm:rounded-xl element-2">
                 <div className="flip-card-front bg-backgroundPrimary rounded-3xl max-sm:rounded-xl flex justify-center">
                   <div className="absolute right-0 top-0 p-3">
                     <div className="w-14 h-14 max-sm:w-10 max-sm:h-10 rounded-full bg-[#3e3e3e] flex items-center justify-center font-[KyivTypeSansBoldThinMidline] text-4xl max-sm:text-2xl text-transparent font-outline-2">S</div>
@@ -240,8 +239,10 @@ function App() {
                 <div className="relative flip-card-back bg-backgroundPrimary rounded-3xl max-sm:rounded-xl text-white">
                   <div className="flex flex-col gap-0">
                     <div className="flex items-center justify-between p-5 max-sm:p-3 max-sm:pb-1">
-                      <h2 className="text-left pb-0 text-4xl max-sm:text-xl font-bold">Have anything in mind?</h2>
-                      <Social />
+                      <h2 className="text-left pb-0 text-4xl max-sm:text-xl font-bold">Do you have anything in mind?</h2>
+                      <IconContext.Provider value={{ color: "white", className: "ContactIcons" }}>
+                        <Social />
+                      </IconContext.Provider>
                     </div>
 
                     <p className="text-left p-5 max-sm:p-3 max-sm:pb-0 max-sm:pt-0 pt-0 max-sm:text-base">Send me a message</p>
@@ -258,7 +259,7 @@ function App() {
                     <div className="h-14 w-14 bg-[url(/Image/telegramQr.png)] bg-cover max-sm:h-10 max-sm:w-10"></div>
                   </a>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
           <TabNav activeSection={activeSection} isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu} />

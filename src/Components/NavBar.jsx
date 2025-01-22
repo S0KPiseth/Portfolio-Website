@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import Social from "./Social";
+import { IconContext } from "react-icons";
 
 function NavBar({ setIsOpenMenu, isOpenMenu }) {
   const menuRef = useRef(null);
@@ -36,7 +37,9 @@ function NavBar({ setIsOpenMenu, isOpenMenu }) {
         </svg>
       </button>
       <div className="max-sm:w-0 max-sm:scale0 max-sm:absolute max-sm:z-[-1] max-sm:hidden">
-        <Social />
+        <IconContext.Provider value={{ color: "white", className: "ContactIcons" }}>
+          <Social />
+        </IconContext.Provider>
       </div>
     </nav>
   );

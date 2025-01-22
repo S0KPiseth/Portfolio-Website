@@ -7,8 +7,12 @@ import ProjectConfig from "../constants/Projectconfig";
 import { motion } from "motion/react";
 function WorkCard({ data, setShowCustom, index }) {
   const [showDetails, setShowDetails] = useState(false);
-  const languageUse = ProjectConfig[data.name + "Lang"].map((e) => {
-    return <p className="text-xs text-blue-700">#{e}</p>;
+  const languageUse = ProjectConfig[data.name + "Lang"].map((e, indx) => {
+    return (
+      <p key={`${e}top-${indx}`} className="text-xs text-blue-700">
+        #{e}
+      </p>
+    );
   });
   return (
     <motion.li
