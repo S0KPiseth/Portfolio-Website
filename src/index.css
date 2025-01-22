@@ -19,7 +19,7 @@
   }
 
   .clock {
-    @apply text-[#272727] text-[250px] font-serif motion-preset-pop max-[1024px]:text-9xl max-sm:text-7xl;
+    @apply text-[#272727] text-[250px] font-serif motion-preset-pop max-[1024px]:text-9xl max-sm:text-7xl flex items-center justify-center;
   }
   .intro {
     @apply text-2xl text-white max-sm:text-2xl;
@@ -85,25 +85,13 @@
     @apply bg-[rgba(255,_255,_255,_0.08)] [box-shadow:0_4px_30px_rgba(0,_0,_0,_0.1)] backdrop-filter backdrop-blur-[3.6px] border-[1px] border-[solid] border-[rgba(255,255,255,0.3)];
   }
   .tabNav {
-    @apply fixed max-sm:translate-y-[-100%] md:glass max-sm:bg-black max-sm:h-full max-sm:flex max-sm:items-center max-sm:justify-end max-sm:w-full z-20 md:bottom-6 max-sm:bottom-0 p-2 px-5 md:rounded-3xl left-1/2 translate-x-[-50%] font-bold text-white font-[inter];
+    @apply fixed max-sm:translate-y-[-200%] md:glass max-sm:bg-black max-sm:h-full max-sm:flex max-sm:items-center max-sm:justify-end max-sm:w-full z-20 md:bottom-6 max-sm:bottom-0 p-2 px-5 md:rounded-3xl left-1/2 translate-x-[-50%] font-bold text-white font-[inter];
     @apply transition-transform duration-500;
   }
   .tabNavOpen {
     @apply fixed md:glass max-sm:bg-black max-sm:h-full max-sm:flex max-sm:items-center max-sm:justify-end max-sm:w-full z-20 md:bottom-6 max-sm:bottom-0 p-2 px-5 md:rounded-3xl left-1/2 translate-x-[-50%] font-bold text-white font-[inter];
     @apply transition-transform duration-500;
   }
-}
-.menuOpen path:nth-child(1) {
-  d: path("M5 33L33 5");
-}
-.menuOpen path:nth-child(2) {
-  d: path("M5 5L33 33");
-}
-.menuNOpen path:nth-child(1) {
-  d: path("M1 14L38 14");
-}
-.menuNOpen path:nth-child(2) {
-  d: path("M1 26L38 26");
 }
 
 .radial-gradient {

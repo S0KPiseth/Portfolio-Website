@@ -9,7 +9,6 @@ if (randomIdx != 0) {
 }
 
 function Clock({ fullLoad, setFullLoad }) {
-  const [text, setText] = useState("Cambodia");
   const [index, setIndex] = useState(0);
   const [time, setTime] = useState(new Date());
   const [showClock, setShowClock] = useState(false); // New state to control clock visibility
@@ -48,7 +47,7 @@ function Clock({ fullLoad, setFullLoad }) {
   }, []);
 
   return (
-    <div className="w-full overflow-hidden place-content-center place-items-center h-screen font-bold absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-nowrap z-[-1]">
+    <div className="w-full overflow-hidden place-content-center place-items-center h-screen font-bold absolute text-nowrap z-[-1]">
       {showClock ? (
         <p className="clock">{time.toLocaleTimeString("en-US", { timeZone: "Asia/Phnom_Penh" })}</p>
       ) : (

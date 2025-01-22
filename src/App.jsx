@@ -174,11 +174,11 @@ function App() {
             </div>
             {/* "absolute w-1/2 h-full scale-[1.1] bg-contain bg-top bg-[url('/Image/me.png')] bg-no-repeat left-1/2 top-10 z-[-1]" */}
             <div className="absolute flex w-1/2 max-sm:w-full h-full right-0 top-[-5%] overflow-hidden flex-col justify-start">
-              <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }} className="group relative top-1/4 scale-[1.5] bg-cover w-full h-full bg-me3d bg-no-repeat hover:bg-[url('/Image/me2.png')] transition-all bg-blend-overlay max-sm:z-[-1] max-sm:bg-left">
+              <div className="group relative top-1/4 scale-[1.5] bg-cover w-full h-full bg-me3d bg-no-repeat hover:bg-[url('/Image/me2.png')] transition-all bg-blend-overlay max-sm:z-[-1] max-sm:bg-left">
                 <p className="inline-block max-[1024px]:rotate-180 max-[1024px]:top-[30%] max-[1024px]:left-[10%] xl:rotate-0 group-hover:after:w-[90px] absolute h-fit max-w-[250px] text-[10px] text-white right-[30%] top-16 tips">
                   <span className="inline-block text-wrap w-[90px] max-[1024px]:rotate-[-180deg]">Thank you visiting!</span>
                 </p>
-              </motion.div>
+              </div>
               <div className="blendBg w-full h-40 absolute bottom-0 max-sm:z-[-1]"></div>
               <div className="md:scale-0 bg-blurVt z-[-1] w-full h-full absolute"></div>
             </div>
@@ -261,7 +261,7 @@ function App() {
               </div>
             </div>
           </div>
-          <TabNav activeSection={activeSection} isOpenMenu={isOpenMenu} />
+          <TabNav activeSection={activeSection} isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu} />
         </>
       ) : null}
     </>
