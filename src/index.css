@@ -8,8 +8,9 @@
   }
   @font-face {
     font-family: "KyivTypeSansBoldThinMidline";
-    src: url("font/KyivTypeSansBoldThinMidline/font.woff2") format("woff2"), url("font/KyivTypeSansBoldThinMidline/font.woff") format("woff");
+    src: url("/font/KyivTypeSansBoldThinMidline/font.woff2") format("woff2"), url("/font/KyivTypeSansBoldThinMidline/font.woff") format("woff");
   }
+
   body {
     @apply bg-backgroundPrimary font-sans overflow-x-hidden;
   }
@@ -43,7 +44,7 @@
     @apply bg-white text-black rounded-full p-1 px-2 flex items-center gap-x-1 w-28 h-8 hover:bg-black hover:text-white transition-all;
   }
   .contactInput {
-    @apply bg-transparent border-white border-b-[1px];
+    @apply bg-transparent border-white border-b-[1px] rounded-none;
   }
   .contactInput:focus {
     outline: none;

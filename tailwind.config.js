@@ -12,7 +12,7 @@ export default {
       },
 
       backgroundImage:{
-        me3d:'url(/public/Image/me.png)',
+        me3d:'url(/Image/me.png)',
         blur: 'linear-gradient(0deg, rgba(30,30,30,1) 0%, rgba(255,255,255,0) 100%)',
         dot:'radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0)',
         noise:'url(/Image/bg.png)',

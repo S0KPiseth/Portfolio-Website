@@ -50,9 +50,9 @@ function Clock({ fullLoad, setFullLoad }) {
   return (
     <div className="w-full overflow-hidden place-content-center place-items-center h-screen font-bold absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-nowrap z-[-1]">
       {showClock ? (
-        <p className="clock">{time.toLocaleTimeString()}</p>
+        <p className="clock">{time.toLocaleTimeString("en-US", { timeZone: "Asia/Phnom_Penh" })}</p>
       ) : (
-        <div className="w-full h-screen place-content-center place-items-center">
+        <div className="w-full h-screen flex items-center justify-center">
           <div ref={textRef} className="absolute intro right-0 bottom-0 p-10 text-left">
             <TextTransition springConfig={presets.wobbly}>{TEXTS[index % TEXTS.length]}</TextTransition>
           </div>
