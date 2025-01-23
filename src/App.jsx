@@ -224,7 +224,7 @@ function App() {
             <div className="h-screen w-full flex items-center justify-center text-[220px] text-[#5d5d5d] text-opacity-40 font-bold text-nowrap max-[1024px]:text-9xl max-sm:text-5xl">GET IN TOUCH</div>
           </section>
           <div className="w-full h-screen flex items-center justify-center">
-            <div className="relative w-2/4 h-3/5 rounded-3xl max-sm:rounded-xl bg-backgroundPrimary flip-card max-[1024px]:w-4/5 max-[1024px]:h-2/6 max-sm:w-11/12 max-sm:h-[30%]">
+            <div className="relative w-2/4 h-3/5 rounded-3xl max-sm:rounded-xl bg-backgroundPrimary flip-card max-[1024px]:w-4/5 max-[1024px]:h-1/2 max-sm:w-11/12 max-sm:h-[30%] max-2xl:w-7/12">
               <motion.div initial={isMobile && { rotateY: "0deg" }} whileInView={isMobile && { rotateY: "180deg" }} transition={{ delay: 0.5 }} className="flip-card-inner shadow-neumorphism rounded-3xl max-sm:rounded-xl element-2">
                 <div className="flip-card-front bg-backgroundPrimary rounded-3xl max-sm:rounded-xl flex justify-center">
                   <div className="absolute right-0 top-0 p-3">
@@ -236,19 +236,19 @@ function App() {
                     <p className="text-xl max-sm:text-base text-green-600 text-center">Available for Hire!</p>
                   </div>
                 </div>
-                <div className="relative flip-card-back bg-backgroundPrimary rounded-3xl max-sm:rounded-xl text-white">
+                <div className="flip-card-back bg-backgroundPrimary rounded-3xl max-sm:rounded-xl text-white flex flex-col">
                   <div className="flex flex-col gap-0">
                     <div className="flex items-center justify-between p-5 max-sm:p-3 max-sm:pb-1">
-                      <h2 className="text-left pb-0 text-4xl max-sm:text-xl font-bold">Do you have anything in mind?</h2>
+                      <h2 className="text-left pb-0 text-4xl max-sm:text-xl font-bold  max-lg:text-xl">Do you have anything in mind?</h2>
                       <IconContext.Provider value={{ color: "white", className: "ContactIcons" }}>
                         <Social />
                       </IconContext.Provider>
                     </div>
 
-                    <p className="text-left p-5 max-sm:p-3 max-sm:pb-0 max-sm:pt-0 pt-0 max-sm:text-base">Send me a message</p>
+                    <p className="text-left p-5 pb-0 max-sm:p-3 max-sm:pb-0 max-sm:pt-0 pt-0 max-sm:text-base">Send me a message</p>
                   </div>
 
-                  <form action="https://formspree.io/f/xnnjarjp" target="blank" method="post" className="w-full h-fit flex flex-col bg-backgroundPrimary rounded-3xl p-5 pt-2 gap-y-10 max-sm:gap-y-7 max-sm:text-xs max-sm:p-3 max-sm:pt-1">
+                  <form action="https://formspree.io/f/xnnjarjp" target="blank" method="post" className="w-full h-fit flex flex-col bg-backgroundPrimary rounded-3xl p-5 pt-2 justify-evenly max-sm:text-xs max-sm:p-3 max-sm:pt-1 flex-grow">
                     <input type="text" className="contactInput" placeholder="Name" name="name" required autoComplete="off" />
                     <input type="email" className="contactInput" placeholder="Email" name="email" required autoComplete="off" />
                     <input type="text" className="contactInput" placeholder="Message" name="message" required autoComplete="off" />
